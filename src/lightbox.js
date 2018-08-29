@@ -24,7 +24,7 @@ class LightBox extends React.Component {
   render() {
     return (
       <div>
-        <h2>Re-rendering based on props</h2>
+        <h2>Re-rendering on parent component&apos;s re-render</h2>
         <div>
           <p>
             This example demonstrates the difference in behaviour between a
@@ -55,7 +55,10 @@ class LightBox extends React.Component {
         >
           Change color (outer component&apos;s state)
         </button>
-        <div style={{ backgroundColor: this.state.color }}>
+        <div
+          className="component-wrapper"
+          style={{ backgroundColor: this.state.color }}
+        >
           <h3>Function-based inner component</h3>
           <InnerFuncComponent text="1 + 1 = 2" />
           <h3>Class-based inner component</h3>
@@ -78,7 +81,7 @@ let funcComponentRenders = 0;
 const InnerFuncComponent = props => {
   funcComponentRenders += 1;
   return (
-    <div>
+    <div className="component-container">
       <div>{props.text}</div>
       <div>Inner component rendered {funcComponentRenders} times</div>
     </div>
@@ -95,7 +98,7 @@ class InnerComponent extends React.Component {
   render() {
     this.renders += 1;
     return (
-      <div>
+      <div className="component-container">
         <div>{this.props.text}</div>
         <div>Inner component rendered {this.renders} times</div>
       </div>
@@ -113,7 +116,7 @@ class PureInnerComponent extends React.PureComponent {
   render() {
     this.renders += 1;
     return (
-      <div>
+      <div className="component-container">
         <div>{this.props.text}</div>
         <div>Inner component rendered {this.renders} times</div>
       </div>

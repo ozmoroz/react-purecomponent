@@ -22,7 +22,7 @@ class SameStateComp extends React.Component {
     this.renders += 1;
     return (
       <div
-        className="component-container"
+        className="component-wrapper"
         style={{ backgroundColor: this.state.color }}
       >
         <div>
@@ -68,7 +68,7 @@ class SameStatePure extends React.PureComponent {
     this.renders += 1;
     return (
       <div
-        className="component-container"
+        className="component-wrapper"
         style={{ backgroundColor: this.state.color }}
       >
         <div>

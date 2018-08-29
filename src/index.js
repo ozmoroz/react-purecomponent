@@ -7,7 +7,7 @@ import './styles.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container App">
       <h1>An ordinary class-based component vs PureComponent</h1>
       <LightBox />
       <SameStateExample />
