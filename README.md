@@ -1,5 +1,5 @@
-# react-functional-vs-class-based-components
-This project demonstrates the difference between functional and class-based React components.
+# react-purecomponent
+This project demonstrates the difference between ordinary class-based React components and PureComponent.
 
 To run this project in browser:
 1. `npm install`
