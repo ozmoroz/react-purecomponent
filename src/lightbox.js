@@ -24,15 +24,43 @@ class LightBox extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleChangeColorClick}>
-          Change color (outer state)
+        <h2>Re-rendering based on props</h2>
+        <div>
+          <p>
+            This example demonstrates the difference in behaviour between a
+            function-based component, an ordinary class-based component and a
+            PureComponent when their parent component is re-rendered.
+          </p>
+          <p className="text-left">
+            Here are two components: an outer component and an inner component.
+            When the outer component&apos;s state is updated, it triggers
+            re-rendering of itself as well as all of its child components. Any
+            function-based and class-based child component re-render{' '}
+            <strong>even if their props are the same</strong>.
+          </p>
+          <p className="text-left">
+            However, a PureComponent does not re-render unless its props change.
+            However, that only works if the props are immutable.{' '}
+            <span style={{ color: 'red' }}>
+              Using mutable props with a PureComponent may lead to unpredictable
+              results
+            </span>
+            .
+          </p>
+        </div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          onClick={this.handleChangeColorClick}
+        >
+          Change color (outer component&apos;s state)
         </button>
         <div style={{ backgroundColor: this.state.color }}>
-          <h2>Function-based inner component</h2>
+          <h3>Function-based inner component</h3>
           <InnerFuncComponent text="1 + 1 = 2" />
-          <h2>Class-based inner component</h2>
+          <h3>Class-based inner component</h3>
           <InnerComponent text="1 + 1 = 2" />
-          <h2>Pure inner component</h2>
+          <h3>Pure inner component</h3>
           <PureInnerComponent text="1 + 1 = 2" />
         </div>
       </div>
