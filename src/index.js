@@ -11,6 +11,13 @@ function App() {
       <h1>An ordinary class-based component vs PureComponent</h1>
       <LightBox />
       <SameStateExample />
+      <h2>The Source code</h2>
+      <div>
+        of this page can be found in{' '}
+        <a href="https://github.com/ozmoroz/react-purecomponent">
+          my GitHub repository
+        </a>
+      </div>
       <h2>To learn more</h2>
       <div className="component-wrapper">
         <div>
